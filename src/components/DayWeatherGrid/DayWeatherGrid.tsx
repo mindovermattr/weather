@@ -1,14 +1,25 @@
 import React, { FC } from "react";
 import { IWeatherRespone } from "../../interface/IWeatherResponse";
 import { GridCell } from "../GridCell/GridCell";
+import { GridRowCell } from "../GridRowCell/GridRowCell";
 import "./DayWeatherGrid.scss";
 
-const DayWeatherGrid: FC<IWeatherRespone> = (props) => {
+interface IGrid extends IWeatherRespone {
+  isShortly: boolean;
+}
+
+const DayWeatherGrid: FC<IGrid> = (props) => {
   return (
-    <div className="grid__wrapper">
-      {props.forecast.forecastday[0].hour.map((forecast) => (
-        <GridCell forecast={forecast} />
-      ))}
+    <div
+      className={["grid__wrapper", props.isShortly ? "shortly" : ""].join(" ")}
+    >
+      {props.forecast.forecastday[0].hour.map((forecast) =>
+        props.isShortly ? (
+          <GridCell forecast={forecast} />
+        ) : (
+          <GridRowCell forecast={forecast} />
+        )
+      )}
     </div>
   );
 };

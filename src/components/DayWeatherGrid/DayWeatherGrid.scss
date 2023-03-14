@@ -1,9 +1,20 @@
 .grid {
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 25px;
-    transition: all 1s;
+
     margin-top: 25px;
+  }
+}
+
+.shortly {
+  grid-template-columns: repeat(12, 1fr);
+  @for $i from 1 through 24 {
+    .grid__wrapper > div {
+      // :nth-child(1-14)
+      &:nth-child(#{$i}) {
+        // Delay the animation. Delay increases as items loop.
+        animation-delay: $i * (0.03s);
+      }
+    }
   }
 }

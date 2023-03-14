@@ -4,7 +4,10 @@
     outline: 1px solid rgba(128, 128, 128, 0.487);
     padding: 15px;
     text-align: center;
-    animation: fade-anim 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fade-anim 0.7s ease-in-out both;
   }
   &__time {
     font-size: 24px;
@@ -25,8 +28,10 @@
 @keyframes fade-anim {
   from {
     opacity: 0;
+    transform: translateX(-50px);
   }
   to {
+    transform: translateX(0px);
     opacity: 1;
   }
 }

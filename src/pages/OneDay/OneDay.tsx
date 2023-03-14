@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import ApiCall from "../../API/ApiCall";
+import { Container } from "../../components/Container/Container";
 import CurrentWeather from "../../components/CurrentWeather/CurrentWeather";
 import DayWeatherGrid from "../../components/DayWeatherGrid/DayWeatherGrid";
 import useFetch from "../../hooks/useFetch";
@@ -30,7 +31,7 @@ const OneDay: FC<Coordinates> = ({ latitude, longitude }) => {
       {isWeatherLoading ? (
         <Loader />
       ) : (
-        <div className="container">
+        <Container>
           <CurrentWeather
             forecast={weatherData.forecast}
             location={weatherData.location}
@@ -38,13 +39,14 @@ const OneDay: FC<Coordinates> = ({ latitude, longitude }) => {
           />
           {/* придумать classname */}
           <h3 className="forecast">Прогноз погоды по часам:</h3>
-          <Switcher />
+          <Switcher onSwitch={() => setIsShortly(!isShortly)} />
           <DayWeatherGrid
             forecast={weatherData.forecast}
             location={weatherData.location}
             current={weatherData.current}
+            isShortly={isShortly}
           />
-        </div>
+        </Container>
       )}
     </>
   );
