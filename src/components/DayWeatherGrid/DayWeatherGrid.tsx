@@ -17,7 +17,10 @@ const DayWeatherGrid: FC<IGrid> = (props) => {
         props.isShortly ? (
           <GridCell forecast={forecast} />
         ) : (
-          <GridRowCell forecast={forecast} />
+          <>
+            {/* todo хедер таблицы */}
+            <GridRowCell forecast={forecast} />
+          </>
         )
       )}
     </div>

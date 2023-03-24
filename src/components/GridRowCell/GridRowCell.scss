@@ -1,13 +1,39 @@
+$font-size: 20px;
 .grid {
   &__cell {
     background-color: #fff;
     outline: 1px solid rgba(128, 128, 128, 0.487);
     padding: 15px;
+    height: 25vh;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    animation: fade-anim 0.7s ease-in-out both;
+    animation: translate-anim 0.7s ease-in-out both;
+    font-size: $font-size;
+    &-probability {
+      &-snow {
+        font-size: 25px;
+        position: relative;
+        padding-left: 35px;
+        &::before {
+          left: 0;
+          top: 0;
+          position: absolute;
+          content: url(../../../public/icons/Snow_chance.svg);
+        }
+      }
+      &-rain {
+        position: relative;
+        font-size: 25px;
+        padding-left: 35px;
+        &::before {
+          position: absolute;
+          left: 0;
+          content: url(../../../public/icons/Rain_chance.svg);
+        }
+      }
+    }
   }
   &__time {
     font-size: 24px;
@@ -25,7 +51,7 @@
   }
 }
 
-@keyframes fade-anim {
+@keyframes translate-anim {
   from {
     opacity: 0;
     transform: translateX(-50px);

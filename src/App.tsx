@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
+import { Container } from "./components/Container/Container";
 import Header from "./components/header/Header";
 import { Coordinates } from "./interface/Coordinates";
 import OneDay from "./pages/OneDay/OneDay";
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       {isLoading ? (
         <Loader />
       ) : (

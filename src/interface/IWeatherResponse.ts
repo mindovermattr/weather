@@ -39,5 +39,9 @@ export interface IHour {
     icon: string;
   };
   feelslike_c: number;
+  feelslike_f: number;
   humidity: number;
+  temp_f: number;
+  chance_of_rain: number;
+  chance_of_snow: number;
 }
