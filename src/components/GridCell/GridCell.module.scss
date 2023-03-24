@@ -1,0 +1,33 @@
+.grid {
+  &__cell {
+    background-color: #fff;
+    outline: 1px solid rgba(128, 128, 128, 0.487);
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    animation: fade-anim 0.5s;
+  }
+  &__time {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &__humidity {
+    margin: 15px 0px;
+    padding-left: 5px;
+    position: relative;
+    &::before {
+      content: url(../../../public/icons/humadity.svg);
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+@keyframes fade-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

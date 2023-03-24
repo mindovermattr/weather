@@ -1,0 +1,14 @@
+
+.logo{
+    position: relative;
+    padding-left: 35px;
+    font-size: 30px;
+    color: #222426;
+    font-weight: 700;
+    &::before{
+        content: url(../../../public/logo.svg);
+        position: absolute;
+        top: 15%;
+        left: 0;
+        }
+}
